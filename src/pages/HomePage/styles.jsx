@@ -3,6 +3,7 @@ import { grey } from "@material-ui/core/colors";
 
 // image
 import backimg from '../../images/backimg1.jpg'
+import { PlayCircleFilledWhiteTwoTone } from "@mui/icons-material";
 export const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -78,20 +79,26 @@ export const useStyles = makeStyles((theme) => ({
     paddingBottom: "1.3rem",
   },
   left:{
-    marginTop:'5%',
+    marginTop:'15%',
     marginLeft:'150px',
     height:'600px',
-    // backgroundColor: '#000000',
+    // backgroundColor: 'white',
   },
   right:{
     marginTop:'50px',
     height:'400px',
-    marginLeft:'55px',
+    marginLeft:'20%',
   },
   body:{
       // backgroundColor:'white',
       backgroundImage:'url(${cover})',
-
+  },
+  body1:{
+    color:'white',
+  },
+  body2:{
+    color:'white',
+    // marginLeft:'30%',
   },
   paper:{
     marginLeft:'30%',
@@ -108,6 +115,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   head:{
     marginLeft:'50px',
+    // marginTop:'50px',
     color:'white'
   }
 }));

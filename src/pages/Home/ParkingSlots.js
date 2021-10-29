@@ -141,11 +141,7 @@ function ParkingSlots({Oid,Pid,setPid,setopt}) {
                               setPid(row.id);
                               setopt(5);
                               }}>DashBoard</Button></TableCell>
-                          {/* <TableCell align="right"><Button onClick={()=>{
-                              setcurSlot(row)
-                              setopt1(2);
-                              handleOpen();
-                              }}>Update</Button></TableCell> */}
+                          
                         </TableRow>
                       ))}
                     </TableBody>

@@ -11,25 +11,29 @@ import { autoPlay } from 'react-swipeable-views-utils';
 
 import img1 from '../../images/p1.jpg'
 import img2 from '../../images/download.jpg'
+import stepper1 from '../../images/stepper1.jpeg'
+import stepper2 from '../../images/stepper2.jpeg'
+import stepper3 from '../../images/stepper3.jpeg'
+import stepper4 from '../../images/stepper4.jpeg'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
     label: 'Web Dashboard',
-    imgPath:img1,
+    imgPath:stepper1,
   },
   {
     label: 'App Home Screen',
-    imgPath:img1,
+    imgPath:stepper2,
   },
   {
     label: 'App Booking',
-    imgPath:img1,
+    imgPath:stepper3,
   },
   {
     label: 'Map',
-    imgPath:img2,
+    imgPath:stepper4,
   },
 ];
 
@@ -51,7 +55,7 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxHeight:200, maxWidth: 500, flexGrow: 1 }}>
+    <Box sx={{ maxHeight:350, maxWidth: 350, flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
@@ -124,3 +128,27 @@ function SwipeableTextMobileStepper() {
 }
 
 export default SwipeableTextMobileStepper;
+
+// import React from 'react'
+// import stepper1 from '../../images/stepper1.jpeg'
+// import { Player } from 'video-react';
+// import { makeStyles } from '@material-ui/core/styles';
+// import vid1 from '../../images/vid1.mp4'
+// const useStyles = makeStyles((theme) => ({
+//   root:{
+//     maxwidth:300,
+//     maxheight:300,
+//   }
+// }))
+// function Stepper() {
+//   const classes = useStyles();
+//   return (
+//     <div className={classes.root}>
+//       <Player>
+//       <source src={vid1} />
+//     </Player>
+//     </div>
+//   )
+// }
+
+// export default Stepper

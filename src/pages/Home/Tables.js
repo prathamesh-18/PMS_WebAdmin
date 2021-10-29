@@ -28,6 +28,7 @@ function Tables({keys,data}) {
     return (
       <ThemeProvider theme={darkTheme}>
         <div>
+            <h2>Parking History</h2>
             <Paper  className={classes.table}>
               <TableContainer component={Paper}>
               <Table sx={{ minWidth: '100%' }} aria-label="simple table">
