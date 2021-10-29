@@ -13,6 +13,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import { useCookies } from "react-cookie";
 import { useHistory } from "react-router-dom";
+import { ThemeProvider, useTheme, createTheme } from '@mui/material/styles';
 
 import Profile from './Profile'
 import Add from './Add'
@@ -20,8 +21,13 @@ import Index from './Index'
 import ParkingSlots from './ParkingSlots';
 
 const drawerWidth = 240;
-
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 const useStyles = makeStyles((theme) => ({
+  
   root: {
     display: 'flex',
   },
@@ -47,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Main() {
   const classes = useStyles();
+  const theme = useTheme();
 
   const [opt, setopt] = useState(0)
   const [cookies, setCookie] = useCookies(["user"]);
@@ -64,16 +71,16 @@ export default function Main() {
       else if (opt==1){
         return <Profile Oid={Oid}></Profile>
       }
-      // else if (opt==2){
-      //     return <Add Oid={Oid} Pid={Pid} setPid={setPid}></Add>
-      // }
-      // else if (opt==4){
-      //   console.log(Oid,Pid)
-      //   return <Index s={1} Oid={Oid} Pid={Pid}></Index>
-      // }
-      // else if (opt==5){
-      //   return <Index s={0} Oid={Oid} Pid={Pid}></Index>
-      // }
+      else if (opt==2){
+          return <Add Oid={Oid} Pid={Pid} setPid={setPid}></Add>
+      }
+      else if (opt==4){
+        console.log(Oid,Pid)
+        return <Index s={1} Oid={Oid} Pid={Pid}></Index>
+      }
+      else if (opt==5){
+        return <Index s={0} Oid={Oid} Pid={Pid}></Index>
+      }
     }  
   const items=[
     {
@@ -111,6 +118,7 @@ const drawer = (
     </div>
   );
   return (
+    
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
@@ -127,6 +135,7 @@ const drawer = (
           paper: classes.drawerPaper,
         }}
         anchor="left"
+        backgroundColor='green'
       >
         <div className={classes.toolbar} />
         <Divider />

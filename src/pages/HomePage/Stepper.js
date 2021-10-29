@@ -16,19 +16,19 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
+    label: 'Web Dashboard',
     imgPath:img1,
   },
   {
-    label: 'Bird',
+    label: 'App Home Screen',
     imgPath:img1,
   },
   {
-    label: 'Bali, Indonesia',
+    label: 'App Booking',
     imgPath:img1,
   },
   {
-    label: 'Goč, Serbia',
+    label: 'Map',
     imgPath:img2,
   },
 ];
@@ -51,7 +51,7 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxHeight:200, maxWidth: 600, flexGrow: 1 }}>
+    <Box sx={{ maxHeight:200, maxWidth: 500, flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
@@ -79,7 +79,7 @@ function SwipeableTextMobileStepper() {
                 sx={{
                   height: 400,
                   display: 'block',
-                  maxWidth: 800,
+                  maxWidth: 600,
                   overflow: 'hidden',
                   width: '100%',
                 }}

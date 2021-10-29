@@ -7,7 +7,12 @@ import TableRow from '@mui/material/TableRow';
 import Table from '@mui/material/Table';
 import Paper from '@mui/material/Paper';
 import { makeStyles } from '@mui/styles';
-
+import { ThemeProvider, useTheme, createTheme } from '@mui/material/styles';
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 const useStyles = makeStyles({
     grid:{
       marginTop:20,
@@ -21,6 +26,7 @@ function Tables({keys,data}) {
     console.log(data)
     const classes = useStyles();
     return (
+      <ThemeProvider theme={darkTheme}>
         <div>
             <Paper  className={classes.table}>
               <TableContainer component={Paper}>
@@ -56,6 +62,7 @@ function Tables({keys,data}) {
             </Paper>
             
         </div>
+        </ThemeProvider>
     )
 }
 

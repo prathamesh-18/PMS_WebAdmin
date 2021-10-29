@@ -86,6 +86,7 @@ export const useStyles = makeStyles((theme) => ({
   right:{
     marginTop:'50px',
     height:'400px',
+    marginLeft:'55px',
   },
   body:{
       // backgroundColor:'white',
@@ -105,4 +106,8 @@ export const useStyles = makeStyles((theme) => ({
   odd:{
     backgroundColor:'#b0bec5'
   },
+  head:{
+    marginLeft:'50px',
+    color:'white'
+  }
 }));

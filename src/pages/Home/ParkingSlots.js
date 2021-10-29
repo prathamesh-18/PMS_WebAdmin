@@ -12,10 +12,16 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import { ThemeProvider, useTheme, createTheme } from '@mui/material/styles';
 import Modal from '@mui/material/Modal';
 import Add from './Add'
-
+import Update from './Update'
 const axios = require('axios')
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 const style = {
   position: 'absolute',
   top: '50%',
@@ -56,6 +62,14 @@ function ParkingSlots({Oid,Pid,setPid,setopt}) {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const [opt1, setopt1] = useState(1)
+    const [curSlot, setcurSlot] = useState()
+    const mod=()=>{
+
+        return <Update Oid={Oid} Pid={Pid} curSlot={curSlot}></Update>
+      
+
+    }
     useEffect(() => {
         promise.then(data => {
         setData(data.user.data.data);
@@ -70,15 +84,18 @@ function ParkingSlots({Oid,Pid,setPid,setopt}) {
   }
   else {    
     return (
+      <ThemeProvider theme={darkTheme}>
         <div>
-
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               <Grid item xs={11}>
                 <h1>Parking Slots</h1>
               </Grid>
               <Grid item xs={1}>
-                <Fab color="primary" aria-label="add" align='right' onClick={handleOpen}>
+                <Fab color="primary" aria-label="add" align='right' onClick={()=>{
+                              setopt1(1);
+                              handleOpen();
+                              }}>
                   <AddIcon />
                 </Fab>
                 <Modal
@@ -91,6 +108,8 @@ function ParkingSlots({Oid,Pid,setPid,setopt}) {
                     <Add Oid={Oid} Pid={Pid} setPid={setPid} handleClose={handleClose}></Add>
                   </Box>
                 </Modal>
+
+
               </Grid>
               <Grid item xs={12}>
                 <Paper  className={classes.table}>
@@ -122,6 +141,11 @@ function ParkingSlots({Oid,Pid,setPid,setopt}) {
                               setPid(row.id);
                               setopt(5);
                               }}>DashBoard</Button></TableCell>
+                          {/* <TableCell align="right"><Button onClick={()=>{
+                              setcurSlot(row)
+                              setopt1(2);
+                              handleOpen();
+                              }}>Update</Button></TableCell> */}
                         </TableRow>
                       ))}
                     </TableBody>
@@ -132,6 +156,7 @@ function ParkingSlots({Oid,Pid,setPid,setopt}) {
             </Grid>
           </Box>            
         </div>
+        </ThemeProvider>
     )}
 }
 export default ParkingSlots
